@@ -46,4 +46,7 @@ GladneyreunionOrg::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # JavaScript files you want as :defaults (application.js is always included).
+  config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails)
 end

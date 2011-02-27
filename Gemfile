@@ -1,11 +1,39 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'bundler', '1.0.9'
+gem 'authlogic'
+gem 'will_paginate'
+gem 'rack-cache'
+gem 'dragonfly', '0.8.1'
+gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+gem 'jquery-rails'
+gem 'haml'
+gem 'hpricot'
+
+group :development do 
+  gem 'capistrano'
+  gem 'ruby-debug19'
+end
+  
+group :development, :test do
+  #gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
+  gem 'autotest', '4.4.6'
+  gem 'autotest-rails-pure', '4.1.2'
+  gem 'autotest-fsevent', '0.2.4'
+  gem 'autotest-growl', '0.2.9'
+  gem 'rspec-rails', '2.4'
+  gem 'webrat'
+  gem 'factory_girl_rails'
+  gem 'spork'  #, :git => 'git://github.com/chrismdp/spork.git'
+end
+
+# group :production do
+#   gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+# end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
