@@ -9,6 +9,7 @@ gem 'dragonfly', '0.8.1'
 gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
+gem 'haml-rails'
 gem 'hpricot'
 
 group :development do 
