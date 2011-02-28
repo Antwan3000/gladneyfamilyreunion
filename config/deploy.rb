@@ -35,7 +35,7 @@ default_run_options[:pty] = true
 #    GIT Version Control
 #############################################################
 set :scm, :git
-set :repository,  "git@github.com:Antwan3000/gladneyfamilyreunion.org.git"
+set :repository,  "git@github.com:Antwan3000/gladneyfamilyreunion.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :scm_command, "/opt/local/bin/git"
