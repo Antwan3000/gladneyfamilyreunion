@@ -1,8 +1,12 @@
 GladneyreunionOrg::Application.routes.draw do
 
-  get "pages/home"
-
-  get "pages/contact"
+  # Static Pages
+  scope :controller => :pages do 
+    get '/contact'  => 'pages#contact'
+  end
+  
+  # Homepage
+  root  :to => "pages#home", :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
