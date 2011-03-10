@@ -20,8 +20,12 @@ The CSS code is for the layout of HTML5 elements for www.gladneyfamilyreunion.or
 }
 
 #flyer {
-	width: 798px;
-	margin: 50px auto;
+	width: 840px;
+	margin: 0 auto;
 	display: block;
-	padding-right: 60px;
+	padding-top: 20px;
+}
+
+#flyer img {
+	padding-left: 18px;
 }
