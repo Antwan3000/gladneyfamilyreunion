@@ -1,0 +1,155 @@
+@import url(reset.css);			/* reset.css */
+@import url(typography.css);	/* typography.css */
+@import url(forms.css);			/* forms.css */
+@import url(grid.css);			/* grid.css */
+@import url(layout.css);		/* layout.css */
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 1.0
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+
+
+/* layout.css */
+
+#gladney-reunion {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 100px;
+	border-top: 20px solid #333;
+	background: transparent url('../images/oaktree-trans-550x426.jpg') no-repeat 85% 20px
+}
+
+/*=================================================================================
+	MASTER HEADER
+==================================================================================*/
+#masthead {
+	height: 233px;
+	padding-top: 27px;
+	
+}
+#masthead h1 {
+	background: transparent url('../images/reunion-header.png') no-repeat 0px center;
+	height: 172px;
+	text-indent: -9999px;
+}
+
+
+/*=================================================================================
+	NAVIGATION
+==================================================================================*/
+nav {
+	background: transparent url('../images/nav-bg.png') repeat center center;
+	overflow: auto; 
+	height: 60px;
+}
+nav li {list-style-type: none;}
+nav a { 
+	font-size: 150%;  
+	padding: 0px 10px; 
+	
+	line-height: 2em
+}
+nav li{float: left; margin-top: 1em; border-right: 1px solid black;}
+#menu {float: right; margin: 0px;}
+
+
+/*=================================================================================
+	CONTENT
+==================================================================================*/
+section.column {
+	padding-top: 20px;
+}
+section.column a, #blurb p {
+	padding: 0 23px;
+}
+
+#content p {
+	font-size: 140%;
+	color: #555;
+}
+a.gray-box {
+	position: relative;
+	width: 294px;
+	height: 226px;
+	overflow: auto;
+	display: block;
+	text-align: center;
+	background: transparent url('../images/gray-box.png') no-repeat center center;
+	text-decoration: none;
+}
+a.gray-box:hover {
+	background: transparent url('../images/gray-box-hover.png') no-repeat center center;
+}
+
+a.gray-box h2, a.gray-box img {
+	position: absolute;
+	margin-bottom: 0;
+}
+a.gray-box h2 {
+	width: 294px;
+	bottom: 25px;
+}
+a.gray-box img {
+	left: 110px;
+	bottom: 55px;
+}
+
+
+
+/*=================================================================================
+	FOOTERS
+==================================================================================*/
+footer {
+	width: 100%;
+	float: left;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#subfooter{
+	background-color: #CC0000;
+	border-top: 7px solid #333;
+	color: #660000;
+	height: 135px;
+	position: relative;
+}
+#subfooter	h2, h3 {width: 175px; color: #660000; float: left; margin-bottom: 0; }
+#subfooter	h2 { margin: 10px 0 0 60px;	font-size: 290%; font-weight: bold; }
+#subfooter	h3 { margin: -10px 0 0 75px; font-size: 215%; font-weight: 350; }
+#subfooter #social-media{
+	position: relative;
+	padding-top: 10px;
+}
+#subfooter	a#facebook {
+	width: 104px; height: 103px;
+	margin-top: -70px;
+	float: right;
+	text-indent: -9999px;
+	background: transparent url('../images/facebook-link.png') no-repeat center center
+}
+#subfooter	a:hover#facebook {
+	background: transparent url('../images/facebook-hover-blue.png') no-repeat center center;
+	cursor: pointer
+}
+#copyright {
+	background-color: #333;
+	border-top: 2px solid white;
+	color: #ccc;
+	margin-bottom: 0;
+}
+#copyright p { 
+	display: block; 
+	font-size: 120%;
+	padding: 10px 0;
+	font-weight: 200;
+	margin-bottom: 0;
+}

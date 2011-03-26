@@ -2,7 +2,10 @@ GladneyreunionOrg::Application.routes.draw do
 
   # Static Pages
   scope :controller => :pages do 
+    get '/committee'  => 'pages#committee'
     get '/contact'  => 'pages#contact'
+    get '/hotel'  => 'pages#hotel'
+    get '/schedule'  => 'pages#schedule'
   end
   
   # Homepage

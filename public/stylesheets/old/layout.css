@@ -1,0 +1,132 @@
+/*=================================================================================
+Layout Style Sheet
+
+Author:  Antwan Foster { Web Developer }
+E-mail:  Antwan3000@gmail.com
+website:  www.gladneyfamilyreunion.org
+
+Date:  March 7, 2011
+
+Desctiption:
+The CSS code is for the layout of HTML5 elements for www.gladneyfamilyreunion.org
+==================================================================================*/
+
+
+
+
+#gladney-reunion{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: auto;
+}
+
+/*=================================================================================
+	WRAPPERS
+==================================================================================*/
+.wrap, #mastfooter {
+	width: 100%;
+	float: left;
+	overflow: auto;
+}
+.frame {
+	width: 1080px;
+	padding: 0 0px;
+	float: left;
+}
+#content.frame, #subfooter.frame, #copyright.frame {
+	width: 960px;
+	padding: 0px 60px;
+}
+#header-wrapper {
+	background-color: blue;
+}
+#nav-wrapper {
+	background-color: red;
+}
+#content-wrapper {
+	background-color: #fff;
+	padding-bottom: 10px;
+}
+#subfooter-wrapper {
+	background-color: #CC0000;
+	border-top: 7px solid #333;
+}
+#copyright-wrapper {
+	background-color: #333;
+	border-top: 2px solid white;
+}
+
+
+
+/*=================================================================================
+	MASTER HEADER
+==================================================================================*/
+
+
+
+/*=================================================================================
+	NAVIGATION
+==================================================================================*/
+
+
+
+/*=================================================================================
+	CONTENT
+==================================================================================*/
+#flyer {
+	width: 840px;
+	padding: 0px 60px;
+	display: block;
+}
+	
+#flyer	img {padding-left: 18px;}
+
+body.one-column #content .column {
+	width: 960px;
+}
+body.three-column #content .column {
+	margin-right: 120px;
+	width: 240px;
+	float: left;
+}
+body.three-column #content .last {
+	margin-right: 0px;
+}
+#registration h2, #hotel h2, #events-schedule h2 {
+	width: 100%;
+	text-align: center;
+}
+
+
+/*=================================================================================
+	FOOTERS
+==================================================================================*/
+footer {width: 100%;}
+
+#subfooter{
+	color: #660000;
+	height: 135px;
+	position: relative;
+}
+#subfooter	h2, h3 {position: absolute; right: 180px;}
+#subfooter	h2 { top: 55px;	}
+#subfooter	h3 { bottom: 25px; }
+#subfooter	a#facebook {
+	width: 104px; height: 103px;
+	margin-top: 20px;
+	display: block;
+	float: right;
+	text-indent: -9999px;
+	background: transparent url('../images/facebook.png') no-repeat center center
+}
+#subfooter	a:hover#facebook {background: transparent url('../images/facebook-hover.png') no-repeat center center}
+
+#copyright {
+	height: 50px;
+	color: #ccc;
+}
+#copyright p { 
+	display: block; 
+	padding-top: 15px;
+}

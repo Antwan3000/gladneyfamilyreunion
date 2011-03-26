@@ -1,0 +1,21 @@
+/*============================================================================
+Typography Style Sheet
+
+Author:  Antwan Foster { Web Developer }
+E-mail:  Antwan3000@gmail.com
+website:  www.broadmedium.com
+
+Date:  September 12, 2010
+
+Desctiption:
+The CSS code is for the typography & font of XHTML elements for www.OnKeeBand.com
+=============================================================================*/
+
+body{
+	font: 62.5%/1.5 "Helvetica", sans-serif;
+}
+
+footer
+	h2 {font-size: 270%;}
+	h3 {font-size: 175%;}
+	p {font-size: 125%;}

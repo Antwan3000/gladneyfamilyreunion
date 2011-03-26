@@ -13,8 +13,52 @@
 		
 		= javascript_include_tag 'google_analytics' if Rails.env == "production"
 		= javascript_include_tag :defaults
-		= stylesheet_link_tag :all
+		
+		= stylesheet_link_tag 'screen', :media => "screen, projection"
+		= stylesheet_link_tag 'print', :media => "print"
+		/[if lt IE 8]
+			= stylesheet_link_tag 'print', :media => "ie.css"
 				
 	%body#gladney-reunion
-		= yield
+	
+		#wrapper.container
+			
+			%header#masthead.span-18
+				%a{:href => "#{root_path}"}
+					%h1.span-12.left James &amp; Alice Gladney Family Reunion 2011				
+			
+				%h2#location.right 
+					%span#cities Bruce &middot; Pittsboro, 
+					%span#state Mississippi
+			
+			
+			%nav.span-18
+				%ul#menu.append-1
+					%li 
+						= link_to 'Home', root_path
+					%li
+						= link_to 'Committee', committee_path
+					%li.last
+						= link_to 'Contact', contact_path, {:class=> 'last'}
+					
+			%section#content.span-18
+				= yield
+		
+		
+		%footer#mastfoot
+			%footer#subfooter
+				%section.container
+					%section#social-media.span-6.right.last
+						%h2 Follow Us
+						%h3 on Facebook
+						%a#facebook Facebook Link
+			%footer#copyright
+				%section.container
+					%p.span-6 Copyright &copy; 2011  GladneyFamilyReunion.org
+		
+		
+		
+		
+			=# render 'shared/footer'
+		
 
