@@ -1,0 +1,31 @@
+%h1 Listing registrants
+
+%table
+  %tr
+    %th First Name
+    %th Last Name
+    %th Email
+    %th Kinship
+    %th Conf num
+    %th Grand total
+    %th Payment trustee
+    %th
+    %th
+    %th
+
+  - @registrants.each do |registrant|
+    %tr
+      %td= registrant.first_name
+      %td= registrant.last_name
+      %td= registrant.email
+      %td= registrant.kinship
+      %td= registrant.confirmation_num
+      %td= registrant.grand_total
+      %td= registrant.payment_trustee
+      %td= link_to 'Show', registrant
+      %td= link_to 'Edit', edit_registrant_path(registrant)
+      %td= link_to 'Destroy', registrant, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Registrant', register_path

@@ -1,0 +1,36 @@
+%h1= "#{Registrant.count} Registrations"
+%p= "Total registered to attend: #{total_attendance}"
+
+%section#funds.left.append-1
+	%h3 Trustee Accountability Breakdown
+	%ul#accountable{:style => 'width: 230px;'}
+		- Registrant::PAYMENT_TRUSTEES.values.flatten.each do |trustee|
+			%li{:style => 'width: 230px; list-style: none'}= "<span style='width: 80px'>#{trustee}:</span><span style='float: right'>#{monetary(Registrant.where(:payment_trustee => trustee).sum :grand_total)}</span>".html_safe
+		%p{:style => 'border-top: 1px solid black'}= "Grand Total Pending: &nbsp;&nbsp; #{monetary(Registrant.sum :grand_total)}".html_safe
+
+
+%section#orders
+	%h3 T-shirt Orders Statistics
+	%ul#sizes.left.span-6
+		= list_size_stats
+	
+
+%table
+	%thead
+		%tr
+		- %w(First\ Name Last\ Name Email Phone\ Number Kinship\ Description Confirmation# Grand\ Total Guests Payment\ Trustee \  \  ).each do |col|
+			%th= "#{col}"
+	%tbody
+	- @registrants.each do |registrant|
+		%tr
+			%td= registrant.first_name
+			%td= registrant.last_name
+			%td= registrant.email
+			%td= telephone(registrant.phone_number)
+			%td= registrant.kinship
+			%td= registrant.confirmation_num
+			%td= monetary(registrant.grand_total)
+			%td= registrant.guests.count
+			%td= registrant.payment_trustee
+			%td= link_to 'Show', manage_registrant_path(registrant)
+			%td= link_to 'Remove', manage_registrant_path(registrant), :confirm => 'Are you sure?', :method => :delete

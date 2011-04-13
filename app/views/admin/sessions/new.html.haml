@@ -1,0 +1,12 @@
+%h2 Login
+
+- form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => 'login') do |f|
+	.field
+		= f.label :email, "Login Name"
+		= f.email_field :email, :class => 'span-5'
+	.field.clear
+		= f.label :password
+		= f.password_field :password, :class => 'span-5'
+
+	.field.clear
+		= f.submit "Login"

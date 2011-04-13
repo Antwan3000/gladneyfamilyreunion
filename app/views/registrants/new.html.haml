@@ -1,0 +1,19 @@
+%h2 Reunion Registration
+
+%section#pricing
+	%ul#price-list.span-12
+		%ul#registrants
+			%li 
+				%strong Registration Pricing: 
+				Adults (Ages 13 & up) = $20
+			%li Children (Ages 8-12) = $10
+			%li.last Children (Ages 7 & below) = Free
+		%ul#shirts.clear
+			%li 
+				%strong T-shirt Pricing: 
+				Small, Medium, Large, X-Large = $12 
+			%li.last 2X-Large, 3X-Large = $15
+
+= render 'form'
+
+=# debug @registrant

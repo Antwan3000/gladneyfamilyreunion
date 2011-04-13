@@ -1,0 +1,16 @@
+= form_for :val, :url => '/registration/validate', :method => :post  do |registrant_form|
+
+	- if flash[:error]
+		%p.error= flash[:error]
+		
+	%fieldset.credentials
+		%legend Registration Information
+		
+		.field
+			= registrant_form.label :email, "Email Address"
+			= registrant_form.text_field :email
+		.field
+			= registrant_form.label :confirmation_num, "Confirmation Number"
+			= registrant_form.text_field :confirmation_num
+		.actions.clear
+		= registrant_form.submit 'Submit'

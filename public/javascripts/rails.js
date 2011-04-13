@@ -109,6 +109,7 @@
 		});
 		return missing;
 	}
+	
 
 	$('a[data-confirm], a[data-method], a[data-remote]').live('click.rails', function(e) {
 		var link = $(this);

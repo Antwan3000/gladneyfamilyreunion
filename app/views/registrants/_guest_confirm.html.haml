@@ -1,0 +1,6 @@
+= fields_for "registrant[guests_attributes][]", guest do |guest_form|
+
+	= guest_form.hidden_field "first_name"
+	= guest_form.hidden_field "last_name"
+	= guest_form.hidden_field "age_range"
+	= guest_form.hidden_field "shirt_size"

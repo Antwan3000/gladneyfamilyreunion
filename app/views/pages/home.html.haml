@@ -1,19 +1,32 @@
 
 %section#registration.column.span-6
 	
-	%a{:href => "#", :class => "gray-box"}
+	%a{:href => "#{register_url}", :class => "gray-box"}
 		= image_tag("pencil.png", :size => "148x149", :alt => 'Registration')
 		%h2 Registration
 		
 	%article#blurb
 		%p 
-			Register Now! The registration deadline for this year’s reunion is on May 14th 2011.
-			This will help the planning committee with other logistics used to put together the event.
-			You will also be alble to order your Reunion T-shirt during the registration process.
-			Hope to see you soon!
+			Registration is OPEN! Please register by May 14th 2011.
+			This helps the planning committee with other logistics used to put together the event.
+			You will also be alble to order your Reunion T-shirt during the registration process. We 
+			hope to see you there.  The designs for the t-shirt are shown below:
+			
+		%section#gallery
+			%ul
+				%li
+					%a.tshirt-front{:href => "images/tshirt-front.png", :title => "Reunion T-shirt (Front)"}
+						= image_tag("tshirt-front-thumb.png", :width => 60, :height => 19, :class => "tshirt-front")
+						%span T-Shirt Front
+						
+				%li
+					%a.tshirt-back{:href => "images/tshirt-back.png", :title => "Reunion T-shirt (Back)"}
+						= image_tag("tshirt-back-thumb.png", :width => 60, :height => 59, :class => "tshirt-back")
+						%span T-Shirt Back
+						
 
 %section#hotel.column.span-6
-	%a{:href => "#", :class => "gray-box"}
+	%a{:href => "#{hotel_url}", :class => "gray-box"}
 		= image_tag("hotel.png", :size => "128x128", :alt => 'Hotel Options')
 		%h2 Hotel Options
 		
@@ -25,7 +38,7 @@
 			View the Hotel Options for more links and contact info on other hotels.
 
 %section#schedule.column.span-6.last
-	%a{:href => "#", :class => "gray-box"}
+	%a{:href => "#{schedule_url}", :class => "gray-box"}
 		= image_tag("schedule.png", :size => "128x128", :alt => 'Schedule')
 		%h2 Event Schedule
 	

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.5'
 gem 'bundler', '1.0.9'
 gem 'authlogic'
 gem 'will_paginate'
@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'hpricot'
+gem 'nested_form'
+gem 'devise'
+gem 'bartt-ssl_requirement', :require => 'ssl_requirement'
 
 group :development do 
   gem 'capistrano'

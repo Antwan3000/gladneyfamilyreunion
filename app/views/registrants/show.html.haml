@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%h2 Registration Confirmation
+= link_to_function("Print Confirmation", "javascript:print()", {:id => 'print', :class => 'right'})
+
+%section#confirmation.span-18
+	%h3.bottom= "Your Registration Confirmation #: #{@registrant.confirmation_num}"
+	%h4.prepend-top This confirmation will also be sent to your email address
+	
+	
+	%article#personal.column.span-7
+		%h3 Personal Info		
+		= display_personal_info(@registrant).html_safe
+
+	%article#guests.column.span-6
+		%h3= "Guests (#{@registrant.guests.size})"
+		%span (Name, Shirt-Size, Age range)
+		= list_guests(@registrant.guests).html_safe
+	
+	%article#costs.span-8.clear
+		%p.bottom= "Grand Total = #{monetary(@registrant.grand_total)}".html_safe
+		%cite ( Base price of $20 for Self )
+		
+		%p= "Payment Trustee (send payment to):"
+		= display_trustee_address(@registrant.payment_trustee).html_safe
+
+

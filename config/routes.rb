@@ -1,12 +1,53 @@
 GladneyreunionOrg::Application.routes.draw do
+  
+  # devise_for :admin, :controllers => {:sessions => "admin/sessions"}, :only => [:new, :create, :destroy]
+  # 
+  # devise_scope :admin do
+  #   get '/login' => 'admin/sessions#new'
+  #   get '/logout' => 'admin/sessions#destroy'
+  # end
+  # 
+  # namespace "manage", :module => "admin" do
+  #   resources :registrants, :path => 'registrations',  :controller => "registrations"
+  # end
+
+  #scope :protocol => "https" do
+  devise_for :admin, :controllers => {:sessions => "admin/sessions"}, :only => [:new, :create, :destroy]
+
+  devise_scope :admin do
+    get '/login' => 'admin/sessions#new'
+    get '/logout' => 'admin/sessions#destroy'
+  end
+
+  namespace "manage", :module => "admin" do
+    resources :registrants, :path => 'registrations',  :controller => "registrations"
+  end
+  
+  get '/register' => 'registrants#new'
+  get '/registration/modify' => 'registrants#credentials'
+  post '/registration/validate' => 'registrants#validate'
+  get '/registration/:conf_num/edit' => 'registrants#edit', :as => 'edit_registration'
+  put '/registration/:conf_num' => 'registrants#update', :as => 'update_registration'
+  get '/registration/cancel-edit' => 'registrants#cancel_edit', :as => 'cancel_edit'
+  #end
+  #get 'registration/confirm' => 'confirmation#show'
+
+  resources :registrants, :path => 'registration', :only => [:create, :update], :as => 'registration' do
+    get :confirmation, :on => :member, :as => 'confirm'
+  end
+  
 
   # Static Pages
   scope :controller => :pages do 
     get '/committee'  => 'pages#committee'
     get '/contact'  => 'pages#contact'
     get '/hotel'  => 'pages#hotel'
+    get '/letter'  => 'pages#letter'
     get '/schedule'  => 'pages#schedule'
   end
+  
+  # Redirected External Routes
+  match '/facebook', :to => redirect("http://www.facebook.com/event.php?eid=125016634236366")
   
   # Homepage
   root  :to => "pages#home", :via => :get

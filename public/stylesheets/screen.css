@@ -3,6 +3,7 @@
 @import url(forms.css);			/* forms.css */
 @import url(grid.css);			/* grid.css */
 @import url(layout.css);		/* layout.css */
+@import url(ie.css);			/* ie.css */
 /* -----------------------------------------------------------------------
 
 
@@ -23,23 +24,70 @@
 #gladney-reunion {
 	width: 100%;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 20px;
 	border-top: 20px solid #333;
-	background: transparent url('../images/oaktree-trans-550x426.jpg') no-repeat 85% 20px
+	background: transparent url('../images/oaktree-trans-550x426.jpg') no-repeat 85% 25px;
+	/*background-attachment: fixed;*/
 }
 
 /*=================================================================================
 	MASTER HEADER
 ==================================================================================*/
 #masthead {
-	height: 233px;
-	padding-top: 27px;
+	height: 325px;
+	padding-top: 5px;
+	margin-bottom: 20px;
+	position: relative;
 	
 }
 #masthead h1 {
 	background: transparent url('../images/reunion-header.png') no-repeat 0px center;
 	height: 172px;
+	margin-top: 0em;
 	text-indent: -9999px;
+}
+
+#masthead #names {
+	width: 500px;
+	height: 85px;
+	padding: 10px 0;
+	line-height: 85px;
+	text-indent: -9999px;
+	margin: 10px 0 0 10px;
+	float: left;
+	background: transparent url('../images/gladney-names.png') no-repeat 0px center;
+}
+#masthead #names p {
+	text-indent: -9999px;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+#location {
+	position: absolute;
+	width: 240px;
+	text-align: center;
+	bottom: 10px;
+	right: 50px;
+	font-size: 195%;
+	line-height: 1em;
+	list-style: none;
+	margin: 0;
+}
+#location #city {
+	margin-top: 60px;
+	margin-bottom: 0;
+	color: #787878;
+}
+#location #state{
+	margin: 0;
+	padding: 0;
+	font-size: 210%;
+	font-variant: small-caps;
+	font-weight: bold;
+	display: block;
+	color: #d00000;
 }
 
 
@@ -49,18 +97,23 @@
 nav {
 	background: transparent url('../images/nav-bg.png') repeat center center;
 	overflow: auto; 
+	line-height: 50px;
 	height: 60px;
 }
-nav li {list-style-type: none;}
-nav a { 
-	font-size: 150%;  
-	padding: 0px 10px; 
-	
-	line-height: 2em
-}
-nav li{float: left; margin-top: 1em; border-right: 1px solid black;}
+
+nav li{float: left; margin-top: 1em; border-right: 1px solid black;line-height: 30px;}
 #menu {float: right; margin: 0px;}
 
+header ul#admin-links {position: absolute; top: -2em; right: 0}
+header ul#admin-links li {float: left}
+
+nav li, #admin-links li {list-style-type: none;}
+nav a, #admin-links a{ 
+	font-size: 150%;  
+	padding: 0px 10px; 
+	line-height: 2em
+}
+#admin-links a {font-size: 110%}
 
 /*=================================================================================
 	CONTENT
@@ -68,17 +121,26 @@ nav li{float: left; margin-top: 1em; border-right: 1px solid black;}
 section.column {
 	padding-top: 20px;
 }
-section.column a, #blurb p {
+section.column a.gray-box, #blurb p {
 	padding: 0 23px;
 }
+#blurb p {text-align: justify;padding: 0 30px;}
 
+#content {
+	position: relative;
+	font-weight: 300
+}
+#content h2 {
+	font-size: 240%;
+}
 #content p {
-	font-size: 140%;
+	font-size: 135%;
 	color: #555;
 }
+
 a.gray-box {
 	position: relative;
-	width: 294px;
+	width: 284px;
 	height: 226px;
 	overflow: auto;
 	display: block;
@@ -96,13 +158,100 @@ a.gray-box h2, a.gray-box img {
 }
 a.gray-box h2 {
 	width: 294px;
-	bottom: 25px;
+	bottom: 18px;
+	color: #333;
 }
 a.gray-box img {
 	left: 110px;
 	bottom: 55px;
 }
 
+#errors {width: 50%}
+
+#pricing { position: absolute; top: 1em; right: 0px; font-size: 98%}
+#pricing ul {float: right; margin: 0}
+#price-list li { display: block; float: left; padding: 0 7px 0 0; margin: 0 5px 5px 0; border-right: 1px solid #1a1a1a}
+#price-list li.last{border: 0}
+
+#letter {
+	border: 5px solid #e5e5e5;
+	padding: 20px;
+}
+#letter #date {
+	text-align: right;
+	margin-right: 20px;
+	line-height: 0.5em;
+	font-size: 160%;
+}
+
+/* Contacts Page */
+#contacts {padding-left: 0; color: #444}
+#contacts dl.contact {float: left}
+#contacts dl.contact dt {font-size: 1.4em}
+#contacts dl.contact dd p {font-size: 1.2em}
+#contacts dl.contact dt, #contact dd {width: 280px; margin: 0; font-size: 120%; display: block; }
+#contacts dl.contact dd {margin: 0 0 10px 0}
+#contacts dl.contact dd p {margin: 0}
+
+
+/* jQuery lightBox plugin - Gallery style */
+#gallery {
+	background-color: #fff;
+	width: 250px;
+	margin: -10px 0 0 40px;
+}
+#gallery ul { list-style: none; width: 250px; overflow: auto; margin: 0; padding: 0}
+#gallery ul li { display: inline; width: 60px; padding-left: 35px; float: left}
+#gallery ul img {
+	border: 5px solid #555;
+}
+#gallery a { 
+	width: 60px;
+	text-decoration: none; color: #333;
+}
+#gallery img.tshirt-front{
+	margin-top: 0px;
+	padding: 20px 0;
+}
+#gallery a span {width: 90px; padding-left: 3px; display: block}
+#gallery ul a:hover img {
+	border: 5px solid #888;
+}
+#gallery ul a:hover { color: #888; }
+
+
+#confirmation {overflow: auto; font-weight: 300}
+#print {font-size: 120%}
+
+/*PERSONAL INFO*/
+#personal, #address, #guests {margin-top: 30px; margin-bottom: 20px}
+#confirmation article h3 {margin: 0 0 5px 0; padding: 0 0 5px 0; border-bottom: 1px solid #333}
+#confirmation ~ p {margin: 0; padding: 0}
+#personal-info {margin: 0; padding: 0; font-size: 90%}
+#personal-info li {overflow: auto; clear:both; margin-bottom: 4px}
+#personal-info p, #address p {margin: 0 10px 0 0 ; width: 160px;float: left;}
+#personal-info li:first-child p:last-child {color: #1a1a1a; font-weight: bold}
+#personal-info li p:first-child {width: 165px; color: #1a1a1a; font-weight: 300}
+
+/*ADDRESS INFO*/
+address p {font-size: 120%; width: 268px}
+address span {margin-right: 7px}
+
+/*GUEST INFO*/
+#guest-list p{font-size: 98%; margin: 0} 	
+#guest-list span{border-right: 0px solid #333; margin-right: 3px; padding-right: 0px}
+#guest-list p span:first-child {color: #1a1a1a; font-size: 110%; font-weight: bold; display: block}
+#guest-list p span:last-child {border: 0; margin: 0}
+#guest-list li {margin-bottom: 8px}
+
+/*COST INFO*/
+#costs { margin-bottom: 30px}
+#costs p {margin: 0; padding: 0}
+#costs > p:first-child {color: black; font-size: 180%; margin: 0}
+#costs > p:last-child {color: #d00000; clear: both}
+#costs address {margin-left: 265px; margin-top: -23px;}
+#costs address p {color: black; font-weight: 400}
+#costs cite {display: block; margin-bottom: 15px}
 
 
 /*=================================================================================
@@ -122,7 +271,7 @@ footer {
 	height: 135px;
 	position: relative;
 }
-#subfooter	h2, h3 {width: 175px; color: #660000; float: left; margin-bottom: 0; }
+#subfooter	h2, #subfooter h3 {width: 175px; color: #660000; float: left; margin-bottom: 0; }
 #subfooter	h2 { margin: 10px 0 0 60px;	font-size: 290%; font-weight: bold; }
 #subfooter	h3 { margin: -10px 0 0 75px; font-size: 215%; font-weight: 350; }
 #subfooter #social-media{

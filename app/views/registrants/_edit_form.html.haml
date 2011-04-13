@@ -1,0 +1,91 @@
+= nested_form_for @registrant, :url => update_registration_path(@registrant.confirmation_num), :method => :put  do |registrant_form|
+	-if @registrant.errors.any?
+		#error_explanation.clearfix
+			%h3= "There were #{pluralize(@registrant.errors.count, "mistatke")} found with your previous submission."
+			%h4= "Please make corrections to the following:"
+		
+			%ul#errors
+				- @registrant.errors.full_messages.each do |msg|
+					%li= msg
+	%fieldset.personal
+		%legend Personal Information
+	
+		.field.append-1
+			= registrant_form.label :first_name, "First Name"
+			= registrant_form.text_field :first_name, :class => 'span-5'
+		.field
+			= registrant_form.label :last_name, "Last Name"
+			= registrant_form.text_field :last_name, :class => 'span-5'
+		.field.clear.append-1
+			= registrant_form.label :email, "Email Address", :class => 'email'
+			%cite e.g.)  example@mail.com
+			= registrant_form.email_field :email, :class => 'span-5'
+		.field
+			= registrant_form.label :email_confirmation, "Confirm Email Address", :class => 'confirm-email'
+			%cite e.g.)  example@mail.com
+			= registrant_form.email_field :email_confirmation, :class => 'span-5'
+		.field.clear
+			= registrant_form.label :phone_number, "Phone Number"
+			%cite No dashes or parenthesis e.g.) 5554443322
+			= registrant_form.telephone_field :phone_number, :class => 'span-5'
+		.field.clear
+			= registrant_form.label :kinship, "Kinship Description"
+			%cite Your relation or affiliation to the family
+			= registrant_form.select :kinship, grouped_options_for_select(Registrant::KINSHIP_OPTIONS.map, @registrant.kinship, 'Please Select')
+	
+		.field.prepend-1
+			= registrant_form.label :shirt_size, "T-Shirt Size"
+			= registrant_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Please Select'}
+
+
+	%fieldset.address
+		%legend Mailing Address Information
+	
+		= registrant_form.fields_for :address  do |address_form|
+
+			.field.addrline1
+				%label Street or P.O. Box
+				= address_form.text_field :street, :class => 'span-9'
+			.field.clear
+				%label City
+				= address_form.text_field :city, :class => 'span-4'
+			.field	
+				%label State
+				= address_form.text_field :state, :size => 2, :maxlength => 2, :class => 'span-1'
+			.field.pull-2
+				%label Zip Code
+				= address_form.text_field :zipcode, :size => 5, :maxlength => 5, :class => 'span-2'
+
+
+	%fieldset.guest
+		%legend Additional Guests
+		= registrant_form.fields_for :guests do |guest_form|
+	
+			.field.span-5
+				%label First Name
+				= guest_form.text_field :first_name
+		
+				%label Last Name
+				= guest_form.text_field :last_name
+		
+				%label Age Range
+				= guest_form.select :age_range, Guest.age_select_options, {:prompt => 'Please Select'}
+			
+				%label T-Shirts
+				= guest_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Please Select'}
+		
+				= guest_form.link_to_remove "Remove Guest"
+	
+		= registrant_form.link_to_add "Add a Guest", :guests
+			
+	
+	.field
+		= registrant_form.label :payment_trustee, "Payment Trustee"
+		%cite.clearfix You agree to mail your payment to: 
+	
+		= registrant_form.select :payment_trustee, grouped_options_for_select(Registrant::PAYMENT_TRUSTEES.map, @registrant.payment_trustee, 'Please Select')
+		%cite.clearfix (Mailing address will be provided)
+	.actions.prepend-top.append-bottom.clear
+		= registrant_form.submit 'Save', :confirm => "Please make sure your changes are correct."
+		
+= button_to 'Cancel', cancel_edit_path, :method => :get

@@ -1,3 +1,9 @@
+@import url(reset.css);			/* reset.css */
+@import url(typography.css);	/* typography.css */
+@import url(forms.css);			/* forms.css */
+@import url(grid.css);			/* grid.css */
+@import url(layout.css);		/* layout.css */
+@import url(ie.css);			/* ie.css */
 /* -----------------------------------------------------------------------
 
 
@@ -27,3 +33,35 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 .hide {display:none;}
 a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
 a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
+header h1 {color: #b22222; font-size: 250%}
+nav, #content a, #location, #names, #subfooter {display: none}
+
+
+#confirmation {overflow: auto; font-size: 130%; font-weight: 300}
+/*PERSONAL INFO*/
+#personal, #address, #guests {margin-top: 30px; margin-bottom: 20px}
+#confirmation article h3 {margin: 0 0 5px 0; padding: 0 0 5px 0; border-bottom: 1px solid #333}
+#confirmation ~ p {margin: 0; padding: 0}
+#personal-info {margin: 0; padding: 0; font-size: 90%}
+#personal-info li {overflow: auto; clear:both; margin-bottom: 4px}
+#personal-info p, #address p {margin: 0 10px 0 0 ; width: 170px;float: left;}
+#personal-info li:first-child p:last-child {color: #1a1a1a; font-weight: bold}
+#personal-info li p:first-child {width: 185px; color: #1a1a1a; font-weight: 300}
+/*ADDRESS INFO*/
+#address {clear: both}
+address p {font-size: 120%; width: 268px}
+address span {margin-right: 7px}
+/*GUEST INFO*/
+#guest-list p{font-size: 98%; margin: 0} 	
+#guest-list span{border-right: 0px solid #333; margin-right: 3px; padding-right: 0px}
+#guest-list p span:first-child {color: #1a1a1a; font-size: 110%; font-weight: bold; display: block}
+#guest-list p span:last-child {border: 0; margin: 0}
+#guest-list li {margin-bottom: 8px}
+/*COST INFO*/
+#costs { margin-bottom: 30px}
+#costs p {margin: 0; padding: 0; width: 500px}
+#costs > p:first-child {color: black; font-size: 180%; margin: 0}
+#costs > p:last-child {color: #d00000;}
+#costs address {margin-left: 17em; margin-top: -1.5em; color: black}
+#costs address p {color: black; font-weight: 400}
+#costs cite {display: block; margin-bottom: 15px}

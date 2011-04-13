@@ -1,0 +1,15 @@
+= fields_for "registrant[guests]", guest do |guest_form|
+
+	.field
+		%p 
+			%span= guest.first_name
+			= guest_form.hidden_field "first_name"
+
+			%span= guest.last_name
+			= guest_form.hidden_field "last_name"
+
+			%span= guest.age_range
+			= guest_form.hidden_field "age_range"
+
+			%span= guest.shirt_size
+			= guest_form.hidden_field "shirt_size"

@@ -1,0 +1,28 @@
+%h2.bottom Registration Confirmation
+%h4.bottom Please confirm the info and the pricing below
+
+%section#confirmation.span-18
+	%article#personal.column.span-7
+		%h3 Personal Info		
+		= display_personal_info(@registrant).html_safe
+
+	%article#guests.column.span-6
+		%h3= "Guests (#{@registrant.guests.size})"
+		%span (Name, Shirt-Size, Age range)
+		= list_guests(@registrant.guests).html_safe
+		
+	%article#address.column.span-4
+		%h3 Address Info
+		= display_address(@registrant.address).html_safe
+	
+	%article#costs.column.span-8.clear
+		%p= "Grand Total = #{monetary(@registrant.grand_total)}"
+		%cite ( Base price of $20 for Self )
+		
+		%p= "Payment Trustee (send payment to):"
+		= display_trustee_address(@registrant.payment_trustee).html_safe	
+
+
+= render 'confirm_form', :registrant => @registrant
+
+=# debug request

@@ -1,9 +1,9 @@
 /* typography.css */
 html {font-size:100.01%;}
-body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+body {font-size:75%;color:#444;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
 h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
-h2 {font-size:2em;margin-bottom:0.75em;}
+h2 {font-size:2.5em;margin-bottom:0.25em;}
 h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}
 h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
 h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
@@ -14,7 +14,8 @@ p {margin:0 0 1.5em;}
 p .left {margin:1.5em 1.5em 1.5em 0;padding:0;}
 .right {float:right !important;}
 p .right {margin:1.5em 0 1.5em 1.5em;padding:0;}
-a:focus, a:hover {color:#09f;}
+/*a:focus, a:hover {color:#09f;}*/
+a:focus, a:hover {color:#d00000;}
 a {color:#06c;text-decoration:underline;}
 nav a {color: #fef;text-decoration: none}
 blockquote {margin:1.5em;color:#666;font-style:italic;}
@@ -35,20 +36,23 @@ dl dt {font-weight:bold;}
 dd {margin-left:1.5em;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
-thead th {background:#c3d9ff;}
-th, td, caption {padding:4px 10px 4px 5px;}
-tbody tr:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}
+thead th {background:#c3d9ff; text-align: center}
+th, td, caption {padding:4px 10px 4px 5px; text-align: left}
+tbody tr:nth-child(even) td, tbody tr.even td {background:#e8e8e8;}
+/*tbody tr:hover {background-color: #ffffe0}*/
 tfoot {font-style:italic;}
 caption {background:#eee;}
 .small {font-size:.8em;margin-bottom:1.875em;line-height:1.875em;}
-.large {font-size:1.2em;line-height:2.5em;margin-bottom:1.25em;}
+.large {font-size:1.5em;line-height:2.5em;margin-bottom:1.25em;}
 .hide {display:none;}
 .quiet {color:#666;}
 .loud {color:#000;}
 .highlight {background:#ff0;}
+.strong {font-weight: bold}
 .added {background:#060;color:#fff;}
 .removed {background:#900;color:#fff;}
 .first {margin-left:0;padding-left:0;}
-.last {margin-right:0;padding-right:0;}
+.last {margin-right:0;padding-right:0; border-right: 0}
 .top {margin-top:0;padding-top:0;}
 .bottom {margin-bottom:0;padding-bottom:0;}
+.red {color: #d00000}

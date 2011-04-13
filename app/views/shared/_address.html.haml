@@ -1,0 +1,16 @@
+
+%fieldset.address
+	%legend Address
+
+	%p
+		%label Street
+		= address_form.text_field :street
+	%p 
+		%label City
+		= address_form.text_field :city
+	%p
+		%label State
+		= address_form.text_field :state, :size => 2
+	%p
+		%label Zip Code
+		= address_form.text_field :zipcode, :size => 15
