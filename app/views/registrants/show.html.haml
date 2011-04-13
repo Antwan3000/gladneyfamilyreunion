@@ -1,3 +1,5 @@
+= "<p class='notice'>#{notice}</p>".html_safe if notice
+
 %h2 Registration Confirmation
 = link_to_function("Print Confirmation", "javascript:print()", {:id => 'print', :class => 'right'})
 
