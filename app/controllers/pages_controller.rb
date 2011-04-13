@@ -1,11 +1,19 @@
 class PagesController < ApplicationController
-  caches_page :home, :contact
+  caches_page :home, :contact, :letter, :hotel, :schedule
   
   def home
-    @page_layout = 'three-column'
   end
 
   def contact
+  end
+  
+  def letter
+  end
+  
+  def hotel
+  end
+  
+  def schedule
   end
 
 end
