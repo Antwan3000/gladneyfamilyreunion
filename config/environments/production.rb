@@ -49,4 +49,15 @@ GladneyreunionOrg::Application.configure do
   
   # JavaScript files you want as :defaults (application.js is always included).
   config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails)
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :domain => 'gladneyfamilyreunion.org',
+    :port => 587,
+    :user_name => 'gladneyfamilyreunion@gmail.com',
+    :password => 'enterbudalice',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
 end

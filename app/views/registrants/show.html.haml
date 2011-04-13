@@ -1,11 +1,9 @@
-%p#notice= notice
-
 %h2 Registration Confirmation
 = link_to_function("Print Confirmation", "javascript:print()", {:id => 'print', :class => 'right'})
 
 %section#confirmation.span-18
 	%h3.bottom= "Your Registration Confirmation #: #{@registrant.confirmation_num}"
-	%h4.prepend-top This confirmation will also be sent to your email address
+	%h4.prepend-top A confirmation has also been sent to your email address
 	
 	
 	%article#personal.column.span-7

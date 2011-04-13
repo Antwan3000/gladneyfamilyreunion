@@ -16,13 +16,13 @@ class Registrant < ActiveRecord::Base
   
   # Callbacks
   after_validation  :calculate_grand_total, :if => :is_valid?
-  before_save        :generate_conf_num, :unless => :confirmation_exists?
-  # TODO after_create :send_confirmation_email
+  before_save       :generate_conf_num, :unless => :confirmation_exists?
+  after_save        :send_email_confirmation
   
   
   KINSHIP_OPTIONS = {"Decendants of James & Alice" => 
                           ["Clarence Gladney Sr.", "Curtis Gladney", "Lucille Gladney-Stephens", "Robbie Gladney-Foster", 
-                           "Ruby Gladney-Knox", "Walter Gladney", "Willie Bell Gladney"], 
+                           "Ruby Gladney-Knox", "Walter Gladney", "Willie Bell Gladney-Bailey"], 
                      "Alternate Options" =>  
                           ["Distant Relative", "Friend of Family", "Uncertain"]}
   
@@ -68,6 +68,10 @@ class Registrant < ActiveRecord::Base
   
   def self.confirmation_num=(conf_num)
     confirmation_num = conf_num
+  end
+  
+  def send_email_confirmation
+    Notifier.confirm_registration(self).deliver
   end
   
   def self.grand_total=(total)

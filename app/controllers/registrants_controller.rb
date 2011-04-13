@@ -49,7 +49,7 @@ class RegistrantsController < ApplicationController
     if @registrant.already_confirmed?
       @registrant.save
       num_guests = @registrant.guests.count
-      redirect_to confirm_registration_path(@registrant), :notice => "You have successfully registered, with #{num_guests} guests. Confirmation Number is: #{@registrant.confirmation_num}."
+      redirect_to confirm_registration_path(@registrant), :notice => "You have successfully registered. Confirmation Number is: #{@registrant.confirmation_num}"
     else
       if @registrant.valid?
         @registrant.init_confirmation!

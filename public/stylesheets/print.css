@@ -34,7 +34,7 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
 a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
 header h1 {color: #b22222; font-size: 250%}
-nav, #content a, #location, #names, #subfooter {display: none}
+nav, #content a, #location, #names, #subfooter, p.notice {display: none}
 
 
 #confirmation {overflow: auto; font-size: 130%; font-weight: 300}

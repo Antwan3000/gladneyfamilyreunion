@@ -1,0 +1,46 @@
+%table
+	%thead
+		%tr
+			%td
+				%center
+					%h1 
+						= image_tag attachments['email-header.gif'].url, :alt => "Gladney Family Reunion 2011"
+		%tr
+			%td
+				%h3= "Your confirmation # #{@confirmation}"
+	%tbody
+		%tr
+			%td
+				%p 
+					="#{@name}, "
+				%p 
+					Thanks for registering!  We are very excited to know that you are planning to attend this years family reunion during the weekend 
+					of June 3-5, 2011.  All of us are looking forward to enjoying you along with other family and friends who will definitely be present.  
+					This will be a great time to bond and make lasting memories to remember for decades to come.
+				%p 
+					There are more details on the family reunion website concerning lodging (book your hotel room ASAP), event times and dates.  
+					The reunion website will eventually feature a photo gallery that will be added to the site after the family reunion.  Don't forget to visit
+					our facebook page by going to 
+					= url_for("http://www.gladneyfamilyreunion.org/facebook")
+				%p 
+					For future reference, your payment details are below.  Please remember to send your payment as soon as possible 
+					to the trustee you selected during the registration process.  This will help the committees with on-going logistical 
+					planning for the events.  Thank You!  See you soon!
+		%tr
+			%td
+				%h3= "Your Grand Total = #{number_to_currency(@total)}"	
+				%p Please send your payment to the following committee member:
+		%tr
+			%td
+				%b= "#{@trustee}"
+				%br
+				= "#{Registrant::TRUSTEE_ADDRESS[@trustee][:street]}"
+				%br
+				= "#{Registrant::TRUSTEE_ADDRESS[@trustee][:city]}, #{Registrant::TRUSTEE_ADDRESS[@trustee][:state]} #{Registrant::TRUSTEE_ADDRESS[@trustee][:zip]}"
+	%tfoot
+		%tr
+			%td
+				%p= url_for("www.gladneyfamilyreunion.org")
+
+		
+				
