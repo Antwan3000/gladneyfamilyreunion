@@ -15,7 +15,7 @@ module RegistrantsHelper
   def display_address(address)
     "<address> \n"+
     "   <p>#{address.street}</p>\n"+
-    "   <p><span class='city'>#{address.city},</span><span class='state'>#{address.state}</span><span class='zip'>#{address.zipcode}</span>\n"+
+    "   <p><span class='city'>#{address.city},</span><span class='state'>#{address.state}</span><span class='zip'>#{address.zipcode}</span></p>\n"+
     "</address>"
   end
   

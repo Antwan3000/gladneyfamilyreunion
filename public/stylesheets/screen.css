@@ -228,7 +228,7 @@ a.gray-box img {
 #confirmation article h3 {margin: 0 0 5px 0; padding: 0 0 5px 0; border-bottom: 1px solid #333}
 #confirmation ~ p {margin: 0; padding: 0}
 #personal-info {margin: 0; padding: 0; font-size: 90%}
-#personal-info li {overflow: auto; clear:both; margin-bottom: 4px}
+#personal-info li {overflow: auto; clear:both; margin-bottom: 4px; list-style: none}
 #personal-info p, #address p {margin: 0 10px 0 0 ; width: 160px;float: left;}
 #personal-info li:first-child p:last-child {color: #1a1a1a; font-weight: bold}
 #personal-info li p:first-child {width: 165px; color: #1a1a1a; font-weight: 300}
