@@ -18,7 +18,7 @@ class Registrant < ActiveRecord::Base
   after_validation  :calculate_grand_total, :if => :is_valid?
   before_save       :generate_conf_num, :unless => :confirmation_exists?
   before_save       :normalize_fields
-  #after_save        :send_email_confirmation
+  after_save        :send_email_confirmation
   
   
   KINSHIP_OPTIONS = {"Decendants of James & Alice" => 
