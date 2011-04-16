@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
-gem 'bundler', '1.0.9'
+gem 'rails', '3.0.6'
+gem 'bundler'
 gem 'authlogic'
 gem 'will_paginate'
 gem 'rack-cache'
