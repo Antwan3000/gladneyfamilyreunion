@@ -7,6 +7,8 @@ class Guest < ActiveRecord::Base
           "Child 8-12"        =>  {:label => "$10 - Age 8-12", :price  => 10.00},
           "Child 7 and Under" =>  {:label => "Free - Age 7 & Below", :price  => 0.00}}
   
+  before_save :normalize_fields
+  
   validates :first_name, :presence => true, :length => { :maximum => 30 }
   validates :last_name, :presence => true, :length => { :maximum => 30 }
   validates :age_range, :inclusion => { :in => AGE.keys }
@@ -14,8 +16,8 @@ class Guest < ActiveRecord::Base
   
   def normalize_fields    
     # Capitalize first and last names fields
-    first_name.capitalize!
-    last_name.capitalize!
+    self.first_name.capitalize!
+    self.last_name.capitalize!
   end
   
   def self.age_select_options
