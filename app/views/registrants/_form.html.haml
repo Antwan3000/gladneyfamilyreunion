@@ -31,11 +31,11 @@
 		.field.clear
 			= registrant_form.label :kinship, "Kinship Description"
 			%cite Your relation or affiliation to the family
-			= registrant_form.select :kinship, grouped_options_for_select(Registrant::KINSHIP_OPTIONS.map, @registrant.kinship, 'Please Select')
+			= registrant_form.select :kinship, grouped_options_for_select(Registrant::KINSHIP_OPTIONS.map, @registrant.kinship, 'Select Kinship')
 		
 		.field.prepend-1
 			= registrant_form.label :shirt_size, "T-Shirt Size"
-			= registrant_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Please Select'}
+			= registrant_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Select Size'}
 
 
 	%fieldset.address
@@ -69,10 +69,10 @@
 				= guest_form.text_field :last_name, :class => 'span-4'
 			
 				%label.clear Age Range
-				= guest_form.select :age_range, Guest.age_select_options, {:prompt => 'Please Select'}
+				= guest_form.select :age_range, Guest.age_select_options, {:prompt => 'Select Age Range'}
 			
 				%label T-Shirts
-				= guest_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Please Select'}
+				= guest_form.select :shirt_size, Registrant.shirt_select_options, {:prompt => 'Select Size'}
 			
 				= guest_form.link_to_remove "Remove Guest"
 		
@@ -83,7 +83,7 @@
 		= registrant_form.label :payment_trustee, "Payment Trustee"
 		%cite.clearfix You agree to mail your payment to: 
 		
-		= registrant_form.select :payment_trustee, grouped_options_for_select(Registrant::PAYMENT_TRUSTEES.map, @registrant.payment_trustee, 'Please Select')
+		= registrant_form.select :payment_trustee, grouped_options_for_select(Registrant::PAYMENT_TRUSTEES.map, @registrant.payment_trustee, 'Select Trustee')
 		%cite.clearfix (Mailing address will be provided)
 	.actions.prepend-top.append-bottom.clear
 		= registrant_form.submit 'Continue'

@@ -17,7 +17,8 @@ class Registrant < ActiveRecord::Base
   # Callbacks
   after_validation  :calculate_grand_total, :if => :is_valid?
   before_save       :generate_conf_num, :unless => :confirmation_exists?
-  after_save        :send_email_confirmation
+  before_save       :normalize_fields
+  #after_save        :send_email_confirmation
   
   
   KINSHIP_OPTIONS = {"Decendants of James & Alice" => 
@@ -53,6 +54,14 @@ class Registrant < ActiveRecord::Base
   validates :shirt_size, :presence => true, :inclusion => {:in => SHIRTS.keys}
   
   
+  def normalize_fields
+    # Convert email to lower case
+    self.email.downcase!
+    
+    # Capitalize first and last names fields
+    self.first_name.capitalize!
+    self.last_name.capitalize!
+  end
   
   def init_confirmation!
     self.init_confirmed = true

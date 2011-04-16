@@ -12,6 +12,12 @@ class Guest < ActiveRecord::Base
   validates :age_range, :inclusion => { :in => AGE.keys }
   validates :shirt_size, :presence => true, :inclusion => {:in => Registrant::SHIRTS.keys}
   
+  def normalize_fields    
+    # Capitalize first and last names fields
+    first_name.capitalize!
+    last_name.capitalize!
+  end
+  
   def self.age_select_options
     AGE.keys.collect { |k| [AGE[k][:label], k] }
   end
