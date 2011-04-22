@@ -48,6 +48,7 @@ GladneyreunionOrg::Application.routes.draw do
   
   # Redirected External Routes
   match '/facebook', :to => redirect("http://www.facebook.com/event.php?eid=125016634236366")
+  match '/youtube', :to => redirect("http://www.youtube.com/watch?v=QCRuvnO0voE")
   
   # Homepage
   root  :to => "pages#home", :via => :get

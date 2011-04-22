@@ -272,22 +272,23 @@ footer {
 	position: relative;
 }
 #subfooter	h2, #subfooter h3 {width: 175px; color: #660000; float: left; margin-bottom: 0; }
-#subfooter	h2 { margin: 10px 0 0 60px;	font-size: 290%; font-weight: bold; }
-#subfooter	h3 { margin: -10px 0 0 75px; font-size: 215%; font-weight: 350; }
+#subfooter	h2 { margin: 10px 0 0 -90px;	font-size: 260%; font-weight: bold; }
+#subfooter	h3 { margin: 50px 0 0 -160px;font-size: 215%; font-weight: 390; }
 #subfooter #social-media{
 	position: relative;
-	padding-top: 10px;
+	padding-top: 18px;
 }
-#subfooter	a#facebook {
+#subfooter	a#facebook, #subfooter	a#youtube {
 	width: 104px; height: 103px;
-	margin-top: -70px;
-	float: right;
+	margin-top: 0px;
+	position: absolute;
+	right: 140px;
 	text-indent: -9999px;
-	background: transparent url('../images/facebook-link.png') no-repeat center center
+	background: transparent url('../images/facebook_104x103.png') no-repeat center center
 }
-#subfooter	a:hover#facebook {
-	background: transparent url('../images/facebook-hover-blue.png') no-repeat center center;
-	cursor: pointer
+#subfooter	a#youtube {
+	right: 20px;
+	background: transparent url('../images/youtube_104x104.png') no-repeat center center
 }
 #copyright {
 	background-color: #333;
