@@ -99,6 +99,7 @@ nav {
 	overflow: auto; 
 	line-height: 50px;
 	height: 60px;
+	margin-bottom: 15px;
 }
 
 nav li{float: left; margin-top: 1em; border-right: 1px solid black;line-height: 30px;}

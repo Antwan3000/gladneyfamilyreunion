@@ -1,5 +1,5 @@
 /* grid.css */
-.container {width:1060px;margin:0 auto;}
+.container {width:1060px;margin:0 auto; padding: 0 50px}
 .showgrid {background:url(../images/1080-grid-18col.png) repeat-y 50% -2px;}  
 .column, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18 {float:left;margin-right:20px;}
 .last {margin-right:0; border-right: 0}
