@@ -32,5 +32,5 @@
 			%td= monetary(registrant.grand_total)
 			%td= registrant.guests.count
 			%td= registrant.payment_trustee
-			%td= link_to 'Show', manage_registrant_path(registrant)
+			%td= link_to 'View', manage_registrant_path(registrant)
 			%td= link_to 'Remove', manage_registrant_path(registrant), :confirm => 'Are you sure?', :method => :delete
