@@ -2,6 +2,9 @@ class Admin::RegistrationsController < ApplicationController
   ssl_exceptions
   before_filter :authenticate_admin!
   
+  include RegistrantsHelper
+  
+  
   # GET /registrants
   # GET /registrants.xml
   def index
@@ -11,6 +14,10 @@ class Admin::RegistrationsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @registrants }
     end
+  end
+  
+  def show
+    @registrant = Registrant.find(params[:id])
   end
 
   # GET /registrants/1/edit

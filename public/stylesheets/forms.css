@@ -82,7 +82,7 @@ div.field input[type=text], div.field input[type=email], div.field input[type=te
 fieldset.guest a.add_nested_fields, fieldset.guest a.remove_nested_fields {
 	display: block;
 	width: 120px;
-	padding: 17px 0;
+	padding: 17px 0px;
 	margin-top: 10px;
 	text-indent: 38px;
 	text-decoration: none;
