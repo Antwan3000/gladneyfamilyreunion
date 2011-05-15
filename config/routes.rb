@@ -23,7 +23,7 @@ GladneyreunionOrg::Application.routes.draw do
     resources :registrants, :path => 'registrations',  :controller => "registrations"
   end
   
-  get '/register' => 'registrants#new'
+  get '/register' => 'pages#closed'
   get '/registration/modify' => 'registrants#credentials'
   post '/registration/validate' => 'registrants#validate'
   get '/registration/:conf_num/edit' => 'registrants#edit', :as => 'edit_registration'
